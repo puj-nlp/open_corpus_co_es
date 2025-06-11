@@ -185,7 +185,7 @@ poetry.toml
 # LSP config files
 .idea/
 config.json
-*.json
+# *.json
 *.parquet
 temp/*
 temp/
