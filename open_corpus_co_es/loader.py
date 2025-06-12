@@ -6,6 +6,8 @@ import os, json, nltk, pandas as pd
 from .downloader import get_corpus_path, load_catalog
 
 try:
+    nltk.download("punkt_tab")
+    nltk.download("punkt")
     nltk.data.find("tokenizers/punkt")
 except LookupError:
     nltk.download("punkt")
