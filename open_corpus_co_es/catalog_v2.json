@@ -477,7 +477,7 @@
     "url_descarga": "https://drive.google.com/uc?export=download&id=1mPESzZjoXZksBGyAHG4578guEAt32HW7",
     "tokenizacion": "Word",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
