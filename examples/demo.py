@@ -6,7 +6,7 @@ import pprint
 def mostrar_corpus(nombre):
     try:
         print(f"\n📥 Descargando y cargando corpus: {nombre}")
-        download_corpus(nombre)
+        download_corpus(nombre, force=True)
         datos = load_corpus(nombre)
         print("\n✅ Corpus cargado correctamente\n")
 

@@ -136,18 +136,6 @@ def load_corpus(name):
             f"Corpus '{name}' no descargado. Usa download_corpus('{name}') primero."
         )
 
-    # Soporte para corpus RDF
-    # if meta.get("tipo") == "resource" and meta.get("extension") == "rdf":
-    #     rdf_files = list(base_path.rglob("*.rdf"))
-    #     if not rdf_files:
-    #         encontrados = list(base_path.rglob("*"))
-    #         raise FileNotFoundError(
-    #             f"No se encontró archivo .rdf para el recurso '{name}'. Archivos encontrados: {encontrados}"
-    #         )
-    #     g = rdflib.Graph()
-    #     g.parse(str(rdf_files[0]), format="xml")
-    #     return g
-
     files = [f for f in base_path.rglob("*") if f.is_file()]
     if not files:
         raise FileNotFoundError(f"No se encontraron archivos en el corpus '{name}'.")
@@ -176,9 +164,6 @@ def load_corpus(name):
 
     for file in files:
         content = extract_text_from_file(str(file))
-        #tokenizer = meta.get("tokenizacion", "Word").lower()
-        #tokens = word_tokenize(content_raw) if tokenizer == "word" else sent_tokenize(content_raw)
-        #content = Text(tokens)
         if isinstance(content, list):
             all_text.extend(content)
             is_json_mode = True
