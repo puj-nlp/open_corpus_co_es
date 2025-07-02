@@ -37,7 +37,21 @@ def main():
     print("🔍 Iniciando pruebas de todos los corpus disponibles...\n")
     print(list_corpus())
     print("-" * 100)
-    corpus_disponibles = ["presidentes", "laudato_si", ""]# list_corpus()
+    corpus_disponibles = list_corpus()
+    # Pruebas por grupos de corpus.
+    # corpus_disponibles = ["presidentes"]
+    # corpus_disponibles = ["lexicon_duelo_completa", "lexicon_ejecuciones_extrajudiciales", "lexicon_estigmatizacion"]
+    # corpus_disponibles = ["lexicon_actors_roles", "lexicon_actors_roles_excel_v2", "lexicon_afectivo_categorias",
+    #                       "lexicon_afectivo_categorias_v2"]
+    # corpus_disponibles = ["es_hs_project_raw_extended", "es_hs_project_raw_extended_v2"]
+    # corpus_disponibles = ["salud_argentina_2024_v2",  "salud_argentina_2024_v1", "salud_colombia_2024_v1",
+    #                       "salud_mexico_2024_v1", "salud_mexico_2024_v2", "seguridad_argentina_2024_v2",
+    #                       "seguridad_argentina_2024_v1","seguridad_colombia_2024_v1"]
+    # corpus_disponibles = ["musica_metrica", "musica_letra"] # list_corpus()
+    # corpus_disponibles = ["educacion_argentina_2024_v1", "salud_argentina_2024_v1", "seguridad_argentina_2024_v1",
+    #                       "educacion_colombia_2024_v1", "salud_colombia_2024_v1", "seguridad_colombia_2024_v1",
+    #                       "educacion_mexico_2024_v1", "salud_mexico_2024_v1", "seguridad_mexico_2024_v1"] # ["presidentes", "laudato_si", "ods"]# list_corpus()
+    # corpus_disponibles = ["educacion_argentina_2024_v1", "educacion_argentina_2024_v2", "presidentes", "laudato_si", "ods"]
     print(f"\n🔎 Probando todos los corpus habilitados ({len(corpus_disponibles)}):\n")
     time.sleep(1)
 
@@ -46,7 +60,6 @@ def main():
         time.sleep(0.5)
 
     print("\n✅ Pruebas finalizadas.")
-
 
 if __name__ == "__main__":
     main()

@@ -7,6 +7,7 @@ from pathlib import Path
 from .downloader import get_corpus_path, load_catalog
 import csv
 
+
 try:
     nltk.data.find("tokenizers/punkt")
 except LookupError:
@@ -17,13 +18,14 @@ CATALOG, CATALOG_ENABLED = load_catalog()
 
 def detectar_separador(path, encoding="utf-8"):
     with open(path, encoding=encoding) as f:
-        sample = f.read(2048)
+        sample = f.read(2048)  # Leer una muestra del archivo
         sniffer = csv.Sniffer()
         try:
             dialect = sniffer.sniff(sample)
             return dialect.delimiter
         except csv.Error:
-            return ','
+            return ','  # Valor por defecto si no se puede detectar
+
 
 
 def list_corpus():
@@ -36,26 +38,6 @@ def list_corpus():
 
 def extract_documents_from_dataframe(df):
     possible_names = ["text", "contenido", "tweet", "mensaje", "comentario", "descripcion", "texto"]
-    text_col = next((col for col in df.columns if any(k in col.lower() for k in possible_names)), None)
-
-    docs = []
-
-    for _, row in df.iterrows():
-        row_dict = row.dropna().to_dict()
-        if text_col and text_col in row_dict:
-            text = str(row_dict.pop(text_col))
-        else:
-            # Concatenar todas las columnas como texto si no hay columna clara
-            text = " | ".join(str(v) for v in row_dict.values())
-        if text.strip():
-            docs.append({"text": text, **row_dict})
-
-    return docs
-
-
-def extract_documents_from_dataframe_old(df):
-    possible_names = ["text", "contenido", "tweet", "mensaje", "comentario", "descripcion", "texto",
-                      "Hit Sentence", "Hit Text", "sentence", "frase", "content"]
     text_col = next((col for col in df.columns if any(k in col.lower() for k in possible_names)), None)
 
     if text_col:
@@ -130,56 +112,45 @@ def load_corpus(name):
         raise ValueError(f"Corpus '{name}' no está en el catálogo.")
 
     meta = CATALOG[name]
+
     base_path = Path(get_corpus_path(name))
+    subfolder = CATALOG[name].get("subfolder")
 
-    if not base_path.exists():
-        raise FileNotFoundError(
-            f"Corpus '{name}' no descargado. Usa download_corpus('{name}') primero."
-        )
-
-    # Soporte para corpus RDF
-    if meta.get("tipo") == "resource" and meta.get("extension") == "rdf":
-        rdf_files = list(base_path.rglob("*.rdf"))
-        if not rdf_files:
-            encontrados = list(base_path.rglob("*"))
+    if subfolder:
+        data_path = base_path / subfolder
+        if not data_path.exists():
             raise FileNotFoundError(
-                f"No se encontró archivo .rdf para el recurso '{name}'. Archivos encontrados: {encontrados}"
-            )
+                f"Corpus '{name}' tiene subcarpeta definida ('{subfolder}'), pero no se encontró en {data_path}.")
+    else:
+        data_path = base_path
+
+    if not data_path.exists():
+        raise FileNotFoundError(f"Corpus '{name}' no descargado o falta subcarpeta '{subfolder}'. Usa download_corpus('{name}') primero.")
+
+    if meta.get("tipo") == "resource" and meta.get("extension") == "rdf":
+        rdf_files = list(data_path.glob("*.rdf"))
+        if not rdf_files:
+            files_encontrados = list(data_path.glob("**/*"))
+            raise FileNotFoundError(f"No se encontró archivo .rdf para el recurso '{name}' en {data_path}. Archivos encontrados: {files_encontrados}")
         g = rdflib.Graph()
         g.parse(str(rdf_files[0]), format="xml")
         return g
 
-    files = [f for f in base_path.rglob("*") if f.is_file()]
-    if not files:
-        raise FileNotFoundError(f"No se encontraron archivos en el corpus '{name}'.")
-
+    files = [f for f in data_path.glob("**/*") if f.is_file()]
     all_text = []
     is_json_mode = False
-    #is_txt_mode = all(f.suffix == ".txt" for f in files)
+    is_txt_mode = all(f.suffix == ".txt" for f in files)
 
-    #if is_txt_mode:
-    txt_files = [f for f in files if f.suffix == ".txt"]
-
-    if txt_files:
+    if is_txt_mode:
         documentos = {}
         for file in files:
             content = extract_text_from_file(str(file))
-            rel_parts = list(file.relative_to(base_path).parts)
-            # clave = carpeta1_carpeta2_nombrearchivo
-            if len(rel_parts) > 1:
-                key = "_".join(rel_parts[:-1] + [file.stem])
-            else:
-                key = file.stem
-            tokenizer = meta.get("tokenizacion", "Word").lower()
-            tokens = word_tokenize(content) if tokenizer == "word" else sent_tokenize(content)
-            documentos[key] = Text(tokens)
+            nombre = file.stem
+            documentos[nombre] = content
         return documentos
 
     for file in files:
         content = extract_text_from_file(str(file))
-        #tokenizer = meta.get("tokenizacion", "Word").lower()
-        #tokens = word_tokenize(content_raw) if tokenizer == "word" else sent_tokenize(content_raw)
-        #content = Text(tokens)
         if isinstance(content, list):
             all_text.extend(content)
             is_json_mode = True

@@ -57,7 +57,7 @@
     "url_descarga": "https://drive.google.com/uc?export=download&id=1YBHahypClBqXLy2oy7H_2-Kr-ovPh8fR",
     "tokenizacion": "Post",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
@@ -67,12 +67,12 @@
     "pais": "Argentina",
     "año": 2024,
     "tema": "Educacion",
-    "url": "https://drive.google.com/file/d/1f0tMcXrjJ4c-USOy0stCCxtDt1j1yRGu/view?usp=sharing",
-    "id": "1f0tMcXrjJ4c-USOy0stCCxtDt1j1yRGu",
-    "url_descarga": "https://drive.google.com/uc?export=download&id=1f0tMcXrjJ4c-USOy0stCCxtDt1j1yRGu",
+    "url": "https://drive.google.com/file/d/1QmEd42nujxCgXBedXqH7y5frelG3syfv/view?usp=sharing",
+    "id": "1QmEd42nujxCgXBedXqH7y5frelG3syfv",
+    "url_descarga": "https://drive.google.com/uc?export=download&id=1QmEd42nujxCgXBedXqH7y5frelG3syfv",
     "tokenizacion": "Post",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
@@ -87,7 +87,7 @@
     "url_descarga": "https://drive.google.com/uc?export=download&id=1U_fDLS-LArqyMMavvXhj1d2pEID-7yf3",
     "tokenizacion": "Post",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
@@ -102,7 +102,7 @@
     "url_descarga": "https://drive.google.com/uc?export=download&id=1dSD9pxU0o_uW6y_3Puhl3leO08DjPS7m",
     "tokenizacion": "Post",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
@@ -117,7 +117,7 @@
     "url_descarga": "https://drive.google.com/uc?export=download&id=1NqTdWC-jRjTnFJ0nG7rld-D88nHOXMag",
     "tokenizacion": "Post",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
@@ -132,7 +132,7 @@
     "url_descarga": "https://drive.google.com/uc?export=download&id=1AYMzykPKo_0D7feL6z-sS_8axwvLftjB",
     "tokenizacion": "Post",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
@@ -142,12 +142,12 @@
     "pais": "Argentina",
     "año": 2024,
     "tema": "Salud",
-    "url": "https://drive.google.com/file/d/1eWHM9dzN1a9JYjprknJi98_xNFlfJshe/view?usp=sharing",
-    "id": "1eWHM9dzN1a9JYjprknJi98_xNFlfJshe",
-    "url_descarga": "https://drive.google.com/uc?export=download&id=1eWHM9dzN1a9JYjprknJi98_xNFlfJshe",
+    "url": "https://drive.google.com/file/d/1lqmUyj_80bVJDYSB8a4mO1dVHGv_5Ms2/view?usp=sharing",
+    "id": "1lqmUyj_80bVJDYSB8a4mO1dVHGv_5Ms2",
+    "url_descarga": "https://drive.google.com/uc?export=download&id=1lqmUyj_80bVJDYSB8a4mO1dVHGv_5Ms2",
     "tokenizacion": "Post",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
@@ -157,12 +157,12 @@
     "pais": "Argentina",
     "año": 2024,
     "tema": "Salud",
-    "url": "https://drive.google.com/file/d/1nIBveYFTiSKQWnXg5Zwwq0xIaVFFbH7o/view?usp=sharing",
-    "id": "1nIBveYFTiSKQWnXg5Zwwq0xIaVFFbH7o",
-    "url_descarga": "https://drive.google.com/uc?export=download&id=1nIBveYFTiSKQWnXg5Zwwq0xIaVFFbH7o",
+    "url": "https://drive.google.com/file/d/16mnSTooxOJFShxNBNRb9McB3UwZyNQ-S/view?usp=sharing",
+    "id": "16mnSTooxOJFShxNBNRb9McB3UwZyNQ-S",
+    "url_descarga": "https://drive.google.com/uc?export=download&id=16mnSTooxOJFShxNBNRb9McB3UwZyNQ-S",
     "tokenizacion": "Post",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
@@ -172,12 +172,12 @@
     "pais": "Colombia",
     "año": 2024,
     "tema": "Salud",
-    "url": "https://drive.google.com/file/d/1iKypNDSTa_m6JboM7LB9TqZI4qfL_kvA/view?usp=sharing",
-    "id": "1iKypNDSTa_m6JboM7LB9TqZI4qfL_kvA",
-    "url_descarga": "https://drive.google.com/uc?export=download&id=1iKypNDSTa_m6JboM7LB9TqZI4qfL_kvA",
+    "url": "https://drive.google.com/file/d/1zTeFuZQDeU95UYpchqwuWP_XrWNL6333/view?usp=sharing",
+    "id": "1zTeFuZQDeU95UYpchqwuWP_XrWNL6333",
+    "url_descarga": "https://drive.google.com/uc?export=download&id=1zTeFuZQDeU95UYpchqwuWP_XrWNL6333",
     "tokenizacion": "Post",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
@@ -192,7 +192,7 @@
     "url_descarga": "https://drive.google.com/uc?export=download&id=19g_sjz8dYPjdX9eiae_y9zJ5-LcBGCPY",
     "tokenizacion": "Post",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
@@ -202,12 +202,12 @@
     "pais": "Mexico",
     "año": 2024,
     "tema": "Salud",
-    "url": "https://drive.google.com/file/d/15Ysoo1RRric0vJIvQpYdsJVCZW3uq8z1/view?usp=sharing",
-    "id": "15Ysoo1RRric0vJIvQpYdsJVCZW3uq8z1",
-    "url_descarga": "https://drive.google.com/uc?export=download&id=15Ysoo1RRric0vJIvQpYdsJVCZW3uq8z1",
+    "url": "https://drive.google.com/file/d/181apcxcMP3QEjeZwgZKfGoj1F7DxAvge/view?usp=sharing",
+    "id": "181apcxcMP3QEjeZwgZKfGoj1F7DxAvge",
+    "url_descarga": "https://drive.google.com/uc?export=download&id=181apcxcMP3QEjeZwgZKfGoj1F7DxAvge",
     "tokenizacion": "Post",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
@@ -217,12 +217,12 @@
     "pais": "Mexico",
     "año": 2024,
     "tema": "Salud",
-    "url": "https://drive.google.com/file/d/1g0scc0vXAWPnpBz7ax5BJgfBFnNdoHpu/view?usp=sharing",
-    "id": "1g0scc0vXAWPnpBz7ax5BJgfBFnNdoHpu",
-    "url_descarga": "https://drive.google.com/uc?export=download&id=1g0scc0vXAWPnpBz7ax5BJgfBFnNdoHpu",
+    "url": "https://drive.google.com/file/d/1JhABswU1YuXK-HGghBOYn7orEXpxR0TZ/view?usp=sharing",
+    "id": "1JhABswU1YuXK-HGghBOYn7orEXpxR0TZ",
+    "url_descarga": "https://drive.google.com/uc?export=download&id=1JhABswU1YuXK-HGghBOYn7orEXpxR0TZ",
     "tokenizacion": "Post",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
@@ -232,12 +232,12 @@
     "pais": "Argentina",
     "año": 2024,
     "tema": "Seguridad",
-    "url": "https://drive.google.com/file/d/196pxZEtcjQjcuCKNFUB6V36bR4dsIFq3/view?usp=sharing",
-    "id": "196pxZEtcjQjcuCKNFUB6V36bR4dsIFq3",
-    "url_descarga": "https://drive.google.com/uc?export=download&id=196pxZEtcjQjcuCKNFUB6V36bR4dsIFq3",
+    "url": "https://drive.google.com/file/d/1xvdb5hFvHiwPhyrtMacrv_s3F5vrWAIh/view?usp=sharing",
+    "id": "1xvdb5hFvHiwPhyrtMacrv_s3F5vrWAIh",
+    "url_descarga": "https://drive.google.com/uc?export=download&id=1xvdb5hFvHiwPhyrtMacrv_s3F5vrWAIh",
     "tokenizacion": "Post",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
@@ -247,12 +247,12 @@
     "pais": "Argentina",
     "año": 2024,
     "tema": "Seguridad",
-    "url": "https://drive.google.com/file/d/1iwzVi3yOMutTbeexqCbI7UAQY8IaWUoU/view?usp=sharing",
-    "id": "1iwzVi3yOMutTbeexqCbI7UAQY8IaWUoU",
-    "url_descarga": "https://drive.google.com/uc?export=download&id=1iwzVi3yOMutTbeexqCbI7UAQY8IaWUoU",
+    "url": "https://drive.google.com/file/d/1-_zhV_uBo64Plomg06aVDmmHzgxTnYsg/view?usp=sharing",
+    "id": "1-_zhV_uBo64Plomg06aVDmmHzgxTnYsg",
+    "url_descarga": "https://drive.google.com/uc?export=download&id=1-_zhV_uBo64Plomg06aVDmmHzgxTnYsg",
     "tokenizacion": "Post",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
@@ -267,7 +267,7 @@
     "url_descarga": "https://drive.google.com/uc?export=download&id=1EroZiA6zUdOZhi1TKO5QNilxC-uMhooD",
     "tokenizacion": "Post",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
@@ -277,12 +277,12 @@
     "pais": "Colombia",
     "año": 2024,
     "tema": "Seguridad",
-    "url": "https://drive.google.com/file/d/1mYqzXxKrKT-kMqimWflrZ7GrSLpc0Scu/view?usp=sharing",
-    "id": "1mYqzXxKrKT-kMqimWflrZ7GrSLpc0Scu",
-    "url_descarga": "https://drive.google.com/uc?export=download&id=1mYqzXxKrKT-kMqimWflrZ7GrSLpc0Scu",
+    "url": "https://drive.google.com/file/d/13mIKM-5QVQgnhAxP8fgSabr5UT9Mol1W/view?usp=sharing",
+    "id": "13mIKM-5QVQgnhAxP8fgSabr5UT9Mol1W",
+    "url_descarga": "https://drive.google.com/uc?export=download&id=13mIKM-5QVQgnhAxP8fgSabr5UT9Mol1W",
     "tokenizacion": "Post",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
@@ -297,7 +297,7 @@
     "url_descarga": "https://drive.google.com/uc?export=download&id=1NYQj-cp1suS7niea08oMreff2brN9vBQ",
     "tokenizacion": "Post",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
@@ -312,12 +312,12 @@
     "url_descarga": "https://drive.google.com/uc?export=download&id=1b1JzBYXqGijIfcZUKzUiZDuzQIKlJJsV",
     "tokenizacion": "Post",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
     "origen": "cev",
-    "archivo": "entrevistas_victimas_publicas.parquet",
+    "archivo": "entrevistas_victimas_publicas_v2.parquet",
     "extension": "parquet",
     "pais": "Colombia",
     "año": 2020,
@@ -327,19 +327,19 @@
     "url_descarga": "https://drive.google.com/uc?export=download&id=1zBtJ6fM6ypjhWd64OWH5lThhk-aMQjl3",
     "tokenizacion": "Word",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
-    "origen": "general",
-    "archivo": "presidentes.zip",
-    "extension": "zip",
+    "origen": "cev",
+    "archivo": "rag_processed_data.parquet",
+    "extension": "parquet",
     "pais": "Colombia",
-    "año": 2023,
-    "tema": "Presidentes",
-    "url": "https://drive.google.com/file/d/1PrNmdLgxSOsTq-fzu6GHn7tmJtqyh1-I/view?usp=sharing",
-    "id": "1PrNmdLgxSOsTq-fzu6GHn7tmJtqyh1-I",
-    "url_descarga": "https://drive.google.com/uc?export=download&id=1PrNmdLgxSOsTq-fzu6GHn7tmJtqyh1-I",
+    "año": 2020,
+    "tema": "Entrevistas",
+    "url": "https://drive.google.com/file/d/1d1KVuHx3LhKwYPaJpMAXR2S36_NSl-Rg/view?usp=sharing",
+    "id": "1d1KVuHx3LhKwYPaJpMAXR2S36_NSl-Rg",
+    "url_descarga": "https://drive.google.com/uc?export=download&id=1d1KVuHx3LhKwYPaJpMAXR2S36_NSl-Rg",
     "tokenizacion": "Word",
     "descripcion": "Ninguna",
     "enabled": true
@@ -347,22 +347,37 @@
   {
     "tipo": "corpora",
     "origen": "general",
-    "archivo": "edades.zip",
-    "extension": "zip",
+    "archivo": "presidentes.parquet",
+    "extension": "parquet",
     "pais": "Colombia",
-    "año": 2016,
-    "tema": "Edades",
-    "url": "https://drive.google.com/file/d/1n7RLxlFQOUKzBHy952KpZfe4sw1s3ZzL/view?usp=sharing",
-    "id": "1n7RLxlFQOUKzBHy952KpZfe4sw1s3ZzL",
-    "url_descarga": "https://drive.google.com/uc?export=download&id=1n7RLxlFQOUKzBHy952KpZfe4sw1s3ZzL",
+    "año": 2023,
+    "tema": "Presidentes",
+    "url": "https://drive.google.com/file/d/1pet4pUKKFoOtdunF2uaNxhwtYZIg-vg8/view?usp=sharing",
+    "id": "1pet4pUKKFoOtdunF2uaNxhwtYZIg-vg8",
+    "url_descarga": "https://drive.google.com/uc?export=download&id=1pet4pUKKFoOtdunF2uaNxhwtYZIg-vg8",
     "tokenizacion": "Word",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
   },
   {
     "tipo": "corpora",
     "origen": "general",
-    "archivo": "musica.parquet",
+    "archivo": "edades_entrenamiento.parquet",
+    "extension": "parquet",
+    "pais": "Colombia",
+    "año": 2016,
+    "tema": "Edades",
+    "url": "https://drive.google.com/file/d/1fZ9DBXf2QAY0VrmtvtVnsdNCFxQAQbuD/view?usp=sharing",
+    "id": "1fZ9DBXf2QAY0VrmtvtVnsdNCFxQAQbuD",
+    "url_descarga": "https://drive.google.com/uc?export=download&id=1fZ9DBXf2QAY0VrmtvtVnsdNCFxQAQbuD",
+    "tokenizacion": "Word",
+    "descripcion": "Ninguna",
+    "enabled": true
+  },
+  {
+    "tipo": "corpora",
+    "origen": "general",
+    "archivo": "musica_metrica.parquet",
     "extension": "parquet",
     "pais": "Colombia",
     "año": 2020,
@@ -370,6 +385,21 @@
     "url": "https://drive.google.com/file/d/1bX32Q48lOBn9ixbWbEHrlf9Oj8tZv_JL/view?usp=sharing",
     "id": "1bX32Q48lOBn9ixbWbEHrlf9Oj8tZv_JL",
     "url_descarga": "https://drive.google.com/uc?export=download&id=1bX32Q48lOBn9ixbWbEHrlf9Oj8tZv_JL",
+    "tokenizacion": "Word",
+    "descripcion": "Ninguna",
+    "enabled": true
+  },
+  {
+    "tipo": "corpora",
+    "origen": "general",
+    "archivo": "musica_letra.parquet",
+    "extension": "parquet",
+    "pais": "Colombia",
+    "año": 2020,
+    "tema": "Musica",
+    "url": "https://drive.google.com/file/d/12DBuTWIzuvkOPsb-duOqQ7yPKv9svSEV/view?usp=sharing",
+    "id": "12DBuTWIzuvkOPsb-duOqQ7yPKv9svSEV",
+    "url_descarga": "https://drive.google.com/uc?export=download&id=12DBuTWIzuvkOPsb-duOqQ7yPKv9svSEV",
     "tokenizacion": "Word",
     "descripcion": "Ninguna",
     "enabled": true
@@ -407,17 +437,32 @@
   {
     "tipo": "corpora",
     "origen": "general",
-    "archivo": "es_hs_pject_raw_extended.xlsx",
-    "extension": "xlsx",
+    "archivo": "es_hs_project_raw_extended.parquet",
+    "extension": "parquet",
     "pais": "Colombia",
     "año": 2023,
     "tema": "Odio",
-    "url": "https://docs.google.com/spreadsheets/d/18IlZaPYs9Verk7uKlQSd9dXJYtPYD0uu/edit?usp=sharing&ouid=107072219928073180472&rtpof=true&sd=true",
-    "id": "18IlZaPYs9Verk7uKlQSd9dXJYtPYD0uu",
-    "url_descarga": "https://drive.google.com/uc?export=download&id=18IlZaPYs9Verk7uKlQSd9dXJYtPYD0uu",
+    "url": "https://drive.google.com/file/d/1mbCovIeVJ4eXjL-aclzy3AXQwL2jmbYY/view?usp=sharing",
+    "id": "1mbCovIeVJ4eXjL-aclzy3AXQwL2jmbYY",
+    "url_descarga": "https://drive.google.com/uc?export=download&id=1mbCovIeVJ4eXjL-aclzy3AXQwL2jmbYY",
     "tokenizacion": "Word",
     "descripcion": "Ninguna",
-    "enabled": false
+    "enabled": true
+  },
+  {
+    "tipo": "corpora",
+    "origen": "general",
+    "archivo": "es_hs_project_raw_extended_v2.parquet",
+    "extension": "parquet",
+    "pais": "Colombia",
+    "año": 2023,
+    "tema": "Odio",
+    "url": "https://drive.google.com/file/d/1ram9BXdd5CJmBAKTQPzx9e2Tt8PuXtNi/view?usp=sharing",
+    "id": "1ram9BXdd5CJmBAKTQPzx9e2Tt8PuXtNi",
+    "url_descarga": "https://drive.google.com/uc?export=download&id=1ram9BXdd5CJmBAKTQPzx9e2Tt8PuXtNi",
+    "tokenizacion": "Word",
+    "descripcion": "Ninguna",
+    "enabled": true
   },
   {
     "tipo": "corpora",
@@ -552,12 +597,12 @@
     "url_descarga": "https://drive.google.com/uc?export=download&id=1rZqgNtREA_O9apFrUNfYaqJItRRLK-Ow",
     "tokenizacion": null,
     "descripcion": "Ninguna",
-    "enabled": true
+    "enabled": false
   },
   {
     "tipo": "resource",
     "origen": "lexicones",
-    "archivo": "Lexicón TIC.xlsx",
+    "archivo": "lexicon_tic.xlsx",
     "extension": "xlsx",
     "pais": "Colombia",
     "año": 2020,
@@ -587,7 +632,7 @@
   {
     "tipo": "resource",
     "origen": "lexicones",
-    "archivo": "lexicon_actors_roles.xlsx",
+    "archivo": "lexicon_actors_roles_excel_v2.xlsx",
     "extension": "xlsx",
     "pais": "Colombia",
     "año": 2020,
@@ -662,7 +707,7 @@
   {
     "tipo": "resource",
     "origen": "lexicones",
-    "archivo": "lexicon_estigmatización.xlsx",
+    "archivo": "lexicon_estigmatizacion.xlsx",
     "extension": "xlsx",
     "pais": "Colombia",
     "año": 2020,
@@ -782,7 +827,7 @@
   {
     "tipo": "resource",
     "origen": "lexicones",
-    "archivo": "Lexicon_verbos_sentencias tierras.csv",
+    "archivo": "lexicon_verbos_sentencias_tierras.csv",
     "extension": "csv",
     "pais": "Colombia",
     "año": 2020,
@@ -797,7 +842,7 @@
   {
     "tipo": "resource",
     "origen": "lexicones",
-    "archivo": "Lexicon_verbos_sentencias tierras_v2.xlsx",
+    "archivo": "lexicon_verbos_sentencias_tierras_v2.xlsx",
     "extension": "xlsx",
     "pais": "Colombia",
     "año": 2020,
@@ -812,14 +857,14 @@
   {
     "tipo": "resource",
     "origen": "tesauro",
-    "archivo": "tesauro_cev.rdf",
-    "extension": "rdf",
+    "archivo": "tesauro_cev_v2.xlsx",
+    "extension": "xlsx",
     "pais": "Colombia",
     "año": 2020,
     "tema": "CEV",
-    "url": "https://drive.google.com/file/d/1_xcJwvy9pFuB3Yu-9zCHJB1CYJTznccw/view?usp=sharing",
-    "id": "1_xcJwvy9pFuB3Yu-9zCHJB1CYJTznccw",
-    "url_descarga": "https://drive.google.com/uc?export=download&id=1_xcJwvy9pFuB3Yu-9zCHJB1CYJTznccw",
+    "url": "https://docs.google.com/spreadsheets/d/14MuznbYb9k6FdLpMvn9Ww-oG4fpLpjDh",
+    "id": "14MuznbYb9k6FdLpMvn9Ww-oG4fpLpjDh",
+    "url_descarga": "https://drive.google.com/uc?export=download&id=14MuznbYb9k6FdLpMvn9Ww-oG4fpLpjDh",
     "tokenizacion": null,
     "descripcion": "Ninguna",
     "enabled": true

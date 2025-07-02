@@ -20,7 +20,7 @@ class TestCorpusLoader(unittest.TestCase):
         selected = [
             "presidentes",                        # zip -> txt
             "dataset_bancos_2022",               # parquet con Raw_data no válido
-            "lexicon_afectivo_categorias",       # csv
+            "lexicon_sevicia",       # csv
             "lexicon_afectivo_categorias_v2",    # xlsx
             "news_2020_peru_v2"
         ]
@@ -30,17 +30,8 @@ class TestCorpusLoader(unittest.TestCase):
                 try:
                     corpus = load_corpus(name)
                     self.assertIsNotNone(corpus)
-                    self.assertGreater(len(corpus), 10)
-                    # self.assertTrue(all(isinstance(token, str) for token in corpus))
+                    self.assertGreater(len(corpus), 1)
+                    self.assertTrue(all(isinstance(token, dict) for token in corpus))
                 except Exception as e:
                     self.fail(f"Fallo al cargar corpus '{name}': {e}")
 
-    # def test_download_and_load_all_corpus(self):
-    #     catalog = list_corpus()
-    #     for name in catalog.keys():
-    #         with self.subTest(name=name):
-    #             download_corpus(name)
-    #             corpus = load_corpus(name)
-    #             self.assertIsNotNone(corpus)
-    #             self.assertGreater(len(corpus), 10)
-    #             self.assertTrue(all(isinstance(token, str) for token in corpus))

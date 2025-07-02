@@ -33,7 +33,7 @@ def mostrar_corpus(nombre):
         print(f"❌ Error cargando el corpus '{nombre}': {e}")
 
 
-def main():
+def main(corpus=None):
     parser = argparse.ArgumentParser(description="Demo para probar carga de corpus")
     parser.add_argument("--corpus", help="Nombre del corpus a cargar (usa --listar para ver disponibles)")
     parser.add_argument("--listar", action="store_true", help="Listar corpus disponibles")
@@ -44,12 +44,18 @@ def main():
         for nombre in list_corpus():
             print(f"- {nombre}")
         return
+    elif corpus:
+        print("\n📂 Corpus disponibles:")
+        for nombre in list_corpus():
+            print(f"- {nombre}")
 
-    if args.corpus:
+    if corpus:
+        mostrar_corpus(corpus)
+    elif args.corpus:
         mostrar_corpus(args.corpus)
     else:
         print("❗ Por favor, indica un corpus con --corpus o usa --listar para ver las opciones.")
 
 
 if __name__ == "__main__":
-    main()
+    main("rag_processed_data")
