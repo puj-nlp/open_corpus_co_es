@@ -2,7 +2,6 @@ from nltk.text import Text
 import ast
 from nltk.tokenize import word_tokenize, sent_tokenize
 import os, json, nltk, pandas as pd
-import rdflib
 from pathlib import Path
 from .downloader import get_corpus_path, load_catalog
 import csv
@@ -138,16 +137,16 @@ def load_corpus(name):
         )
 
     # Soporte para corpus RDF
-    if meta.get("tipo") == "resource" and meta.get("extension") == "rdf":
-        rdf_files = list(base_path.rglob("*.rdf"))
-        if not rdf_files:
-            encontrados = list(base_path.rglob("*"))
-            raise FileNotFoundError(
-                f"No se encontró archivo .rdf para el recurso '{name}'. Archivos encontrados: {encontrados}"
-            )
-        g = rdflib.Graph()
-        g.parse(str(rdf_files[0]), format="xml")
-        return g
+    # if meta.get("tipo") == "resource" and meta.get("extension") == "rdf":
+    #     rdf_files = list(base_path.rglob("*.rdf"))
+    #     if not rdf_files:
+    #         encontrados = list(base_path.rglob("*"))
+    #         raise FileNotFoundError(
+    #             f"No se encontró archivo .rdf para el recurso '{name}'. Archivos encontrados: {encontrados}"
+    #         )
+    #     g = rdflib.Graph()
+    #     g.parse(str(rdf_files[0]), format="xml")
+    #     return g
 
     files = [f for f in base_path.rglob("*") if f.is_file()]
     if not files:
