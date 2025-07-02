@@ -18,6 +18,6 @@ setup(
     ],
     python_requires=">=3.6",
     package_data={
-        "open_corpus_co_es": ["catalog.json"]
+        "open_corpus_co_es": ["catalog_v2.json"]
     },
 )
