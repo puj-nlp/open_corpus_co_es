@@ -12,7 +12,7 @@ authors = [
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.6"
-dependencies = ["nltk", "pandas", "gdown"]
+dependencies = ["nltk", "pandas", "gdown", "pyarrow", "fastparquet", "tqdm"]
 
 [tool.setuptools]
 packages = ["open_corpus_co_es"]

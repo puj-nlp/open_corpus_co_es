@@ -4,3 +4,7 @@ scipy
 pytest
 gdown
 pandas
+requests
+pyarrow
+fastparquet
+tqdm
