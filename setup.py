@@ -9,7 +9,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-        "nltk"
+        "nltk", "pandas", "gdown", "pyarrow", "fastparquet", "tqdm"
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -18,6 +18,6 @@ setup(
     ],
     python_requires=">=3.6",
     package_data={
-        "open_corpus_co_es": ["catalog_v2.json"]
+        "open_corpus_co_es": ["catalog.json"]
     },
 )
