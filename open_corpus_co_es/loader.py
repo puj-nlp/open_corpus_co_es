@@ -10,6 +10,7 @@ try:
     nltk.data.find("tokenizers/punkt")
 except LookupError:
     nltk.download("punkt")
+    nltk.download('punkt_tab')
 
 CATALOG, CATALOG_ENABLED = load_catalog()
 

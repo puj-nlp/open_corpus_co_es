@@ -125,7 +125,7 @@ def download_corpus(name, force=False):
     # Validar si es archivo plano
     extensiones_planas_validas = {"parquet", "xlsx", "json", "jsonl", "csv"}
     if ext in extensiones_planas_validas:
-        logger.info(f"✔️ Archivo plano '{ext}' descargado correctamente. Omitiendo validación de estructura de carpeta.")
+        logger.info(f"✔️ Recurso o corpus '{name}' agregado correctamente. Omitiendo validación de estructura.")
         return
     else:
         validate_corpus_structure(final_path)
