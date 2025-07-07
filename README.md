@@ -1,116 +1,141 @@
 # Open Corpus CO-ES
 
-Este componente proporciona acceso automatizado a un conjunto de corpus de prueba para tareas de NLP en español. Permite su descarga, carga y visualización desde scripts en Python o la línea de comandos.
+Sistema de descarga y carga de corpus en español, con enfoque en Colombia y América Latina, para tareas de procesamiento de lenguaje natural (PLN).
 
-## 📁 Estructura del Proyecto
+## Características
+
+- 📥 **Descarga automatizada** desde Google Drive (mediante `gdown` o URL directa)
+- 🧾 **Catálogo JSON** con metadatos de más de 70 corpus y recursos léxicos
+- 📚 **Carga flexible** de corpus en múltiples formatos (`.txt`, `.csv`, `.xlsx`, `.parquet`, `.json`, `.rdf`)
+- 🧪 **Pruebas automáticas** de carga para todos los corpus activos
+- 🧰 **Línea de comandos** y uso como módulo de Python
+
+---
+
+## Estructura del Proyecto
 
 ```
 open_corpus_co_es/
-├── downloader.py         # Descarga y extracción de archivos
-├── loader.py             # Carga según tipo de archivo (texto, CSV, RDF, etc.)
-├── utils.py              # Gestión de rutas locales
-├── catalog_v2.json       # Catálogo de corpus disponibles
-├── demo.py               # Carga interactiva de un corpus
-├── demo_all.py           # Pruebas sobre todos los corpus activos
-├── test_loader.py        # Pruebas básicas de carga para todos los corpus
-├── __main__.py           # Punto de entrada CLI para el módulo
+├── downloader.py         # Descarga y validación de archivos
+├── loader.py             # Carga de corpus según su formato
+├── utils.py              # Ruta local para almacenamiento (~/.open_corpus_co_es/data)
+├── catalog.json          # Catálogo principal de corpus
+├── demo.py               # Script de prueba para un solo corpus
+├── demo_all.py           # Script de prueba para todos los corpus
+├── test_loader.py        # Test unitarios
+├── __main__.py           # Entrada desde CLI
 ```
 
-## ▶️ Requisitos
+---
 
-```bash
-pip install -r requirements.txt
-```
+## ▶Instalación
 
-## 📦 Instalación
-
-Puedes instalar el componente directamente desde GitHub usando `pip`:
+### Desde GitHub
 
 ```bash
 pip install git+https://github.com/puj-nlp/open_corpus_co_es.git
 ```
 
-O si usas la conexión SSH:
+### Desde código fuente
 
 ```bash
-pip install git+ssh://git@github.com:puj-nlp/open_corpus_co_es.git
+git clone https://github.com/puj-nlp/open_corpus_co_es.git
+cd open_corpus_co_es
+pip install .
 ```
 
-Esto instalará la librería como un módulo que puedes usar desde Python o desde la línea de comandos con:
+### Requisitos
+
+Instala dependencias:
 
 ```bash
-python -m open_corpus_co_es --list
+pip install -r requirements.txt
 ```
 
-## 🚀 Uso Básico
+---
 
-### Desde los scripts de demostración:
+## Uso Básico
 
-#### Ver todos los corpus disponibles:
-```bash
-python demo.py --listar
-```
+### Listar corpus disponibles
 
-#### Descargar y cargar un corpus:
-```bash
-python demo.py --corpus presidente
-```
-
-#### Probar todos los corpus habilitados:
-```bash
-python demo_all.py
-```
-
-### Desde la línea de comandos con `-m`:
-
-#### Ver todos los corpus disponibles:
 ```bash
 python -m open_corpus_co_es --list
 ```
 
-#### Descargar un corpus específico:
+### Descargar un corpus
+
 ```bash
-python -m open_corpus_co_es --download presidente
+python -m open_corpus_co_es --download salud_colombia_2024_v2
 ```
 
-#### Descargar forzando sobreescritura:
+### Descargar forzando reescritura
+
 ```bash
-python -m open_corpus_co_es --download presidente --force
+python -m open_corpus_co_es --download salud_colombia_2024_v2 --force
 ```
 
-#### Descargar todos los corpus:
+### Descargar todos los corpus habilitados
+
 ```bash
 python -m open_corpus_co_es --download_all
 ```
 
-### Desde la terminal como comando (requiere instalación previa con setup.py):
+### Ejecutar pruebas automáticas
 
-#### Ver corpus disponibles:
-```bash
-open-corpus --list
-```
-
-#### Descargar un corpus:
-```bash
-open-corpus --download presidente
-```
-
-### Ejecutar pruebas automáticas:
 ```bash
 python -m open_corpus_co_es.test_loader
 ```
 
-## 📦 Tipos de archivos soportados
-- `.csv`, `.tsv` (se detecta automáticamente el separador)
-- `.xlsx`, `.parquet`
-- `.txt`
-- `.rdf` (ontologías)
-- `.json`, `.jsonl`
+---
 
-## 📘 Notas
-- Todos los corpus se almacenan localmente en `~/.open_corpus_co_es/data/`
-- El sistema reconoce y procesa los formatos automáticamente.
-- Puedes usar el parámetro `--force` para forzar la re-descarga.
+## Formatos Soportados
 
-## ✅ Licencia
+| Formato | Carga |
+|--------|--------|
+| `.parquet`, `.xlsx`, `.csv`, `.json`, `.jsonl` | Carga como `DataFrame` |
+| `.txt` | Tokenización por palabras u oraciones (`nltk`) |
+| `.rdf` | Se reconoce como recurso semántico (requiere implementación futura) |
+
+---
+
+## Funciones Clave
+
+### `download_corpus(name: str, force=False)`
+Descarga un corpus especificado por `name` usando su ID de Google Drive o URL. Verifica estructura básica y formatos.
+
+### `load_corpus(name: str)`
+Carga un corpus previamente descargado. Aplica extracción automática de texto desde diferentes formatos.
+
+### `list_corpus()`
+Retorna metadatos del catálogo activo en forma de diccionario.
+
+---
+
+
+Puedes acceder directamente a los archivos procesados para análisis posterior.
+
+---
+
+## Ejemplo de Uso en Python
+
+```python
+from open_corpus_co_es.loader import load_corpus
+
+docs = load_corpus("educacion_colombia_2024_v2")
+for i, d in enumerate(docs[:3]):
+    print(d['text'][:200])
+```
+
+---
+
+## Prueba interactiva
+
+```bash
+python demo.py --corpus educacion_colombia_2024_v2
+```
+
+---
+
+## Licencia
+
 MIT License
