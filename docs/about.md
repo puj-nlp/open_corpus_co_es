@@ -5,6 +5,7 @@ title: Librería y Créditos
 layout: page
 title: Créditos y Librería
 permalink: /about/
+nav_order: 1
 ---
 
 ## Créditos

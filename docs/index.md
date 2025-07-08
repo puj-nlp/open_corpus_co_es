@@ -1,6 +1,7 @@
 ---
 layout: home
 title: Inicio
+nav_order: 1
 ---
 
 
@@ -12,8 +13,8 @@ Este sitio documenta el uso de la librería `open_corpus_co_es`, que permite des
 
 Los siguientes corpus están disponibles a través de la librería:
 
-| Nombre del Corpus | Descripción                                                                                           | Año | País | Tema | Origen |
-|-------------------|-------------------------------------------------------------------------------------------------------|-----|------|------|--------|
+| Nombre  | Descripción                         | Año | País | Tema | Origen |
+|---------|-------------------------------------|-----|------|------|--------|
 | `dataset_bancos_2022` | Financiero - Conjunto de datos de origen 'Tweets' generado en Colombia durante el año 2022.           | 2022 | Colombia | Financiero | tweets |
 | `perfiles_periodistas_2020` | Perfiles - Conjunto de datos de origen 'Tweets' generado en Colombia durante el año 2020.             | 2020 | Colombia | Perfiles | tweets |
 | `tweets_miscelaneos_2020` | Tweets - Conjunto de datos de origen 'Tweets' generado en Colombia durante el año 2020.               | 2020 | Colombia | Tweets | tweets |
