@@ -1,6 +1,8 @@
 ---
-title: Open Corpus CO-ES
+layout: home
+title: Inicio
 ---
+
 
 # Open Corpus CO-ES
 

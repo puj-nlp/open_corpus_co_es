@@ -1,10 +1,33 @@
 ---
 title: Librería y Créditos
 ---
+---
+layout: page
+title: Créditos y Librería
+permalink: /about/
+---
 
-# 📦 Librería: open_corpus_co_es
+## Créditos
 
-Este proyecto facilita el acceso a múltiples corpus curados en español para tareas de NLP. Incluye un sistema de descarga, carga automática según tipo de archivo, y procesamiento básico de los textos.
+Proyecto desarrollado por **Luis Gabriel Moreno Sandoval** y colaboradores.
+
+## Librería
+
+La librería `open_corpus_co_es` permite acceder de forma sencilla a conjuntos de datos textuales en español con énfasis en contextos latinoamericanos.
+
+Puedes usarla desde la terminal:
+
+```bash
+python -m open_corpus_co_es --list
+python -m open_corpus_co_es --download <nombre_del_corpus>
+```
+
+O desde Python:
+
+```python
+from open_corpus_co_es import load_corpus
+df = load_corpus("nombre_del_corpus")
+```
 
 ## 📁 Estructura del Código
 
