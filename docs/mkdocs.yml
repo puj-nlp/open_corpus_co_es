@@ -1,0 +1,8 @@
+site_name: Open Corpus CO-ES
+site_description: Librería para la descarga y carga de corpus en español con enfoque en Colombia y América Latina.
+site_author: Luis Gabriel Moreno Sandoval
+theme:
+  name: readthedocs
+nav:
+  - Inicio: index.md
+  - Librería y Créditos: about.md
