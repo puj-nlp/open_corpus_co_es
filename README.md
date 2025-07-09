@@ -30,26 +30,10 @@ open_corpus_co_es/
 
 ## ▶Instalación
 
-### Desde GitHub
+### Desde Pip
 
 ```bash
-pip install git+https://github.com/puj-nlp/open_corpus_co_es.git
-```
-
-### Desde código fuente
-
-```bash
-git clone https://github.com/puj-nlp/open_corpus_co_es.git
-cd open_corpus_co_es
-pip install .
-```
-
-### Requisitos
-
-Instala dependencias:
-
-```bash
-pip install -r requirements.txt
+pip install open_corpus_co_es.git
 ```
 
 ---
@@ -85,18 +69,6 @@ python -m open_corpus_co_es --download_all
 ```bash
 python -m open_corpus_co_es.test_loader
 ```
-
----
-
-## Formatos Soportados
-
-| Formato | Carga |
-|--------|--------|
-| `.parquet`, `.xlsx`, `.csv`, `.json`, `.jsonl` | Carga como `DataFrame` |
-| `.txt` | Tokenización por palabras u oraciones (`nltk`) |
-| `.rdf` | Se reconoce como recurso semántico (requiere implementación futura) |
-
----
 
 ## Funciones Clave
 

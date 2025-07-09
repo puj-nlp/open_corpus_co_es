@@ -17,7 +17,7 @@ console_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 
 def load_catalog():
-    with importlib.resources.open_text("open_corpus_co_es", "catalog_v2.json", encoding="utf-8") as f:
+    with importlib.resources.open_text("open_corpus_co_es", "catalog.json", encoding="utf-8") as f:
         raw = json.load(f)
 
     catalog = {}

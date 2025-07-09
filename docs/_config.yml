@@ -2,9 +2,9 @@ title: Open Corpus CO-ES
 description: Librería para la descarga y carga de corpus en español con enfoque en Colombia y América Latina.
 author: Luis Gabriel Moreno Sandoval
 theme: minima
-markdown: kramdown
-plugins:
-  - jekyll-feed
 minima:
   navigation:
     enabled: true
+markdown: kramdown
+plugins:
+  - jekyll-feed
