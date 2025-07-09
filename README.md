@@ -5,8 +5,8 @@ Sistema de descarga y carga de corpus en español, con enfoque en Colombia y Am�
 ## Características
 
 - 📥 **Descarga automatizada** desde Google Drive (mediante `gdown` o URL directa)
-- 🧾 **Catálogo JSON** con metadatos de más de 70 corpus y recursos léxicos
-- 📚 **Carga flexible** de corpus en múltiples formatos (`.txt`, `.csv`, `.xlsx`, `.parquet`, `.json`, `.rdf`)
+- 🧾 **Catálogo ** con metadatos de más de 70 corpus y recursos léxicos
+- 📚 **Carga flexible** de corpus en múltiples formatos
 - 🧪 **Pruebas automáticas** de carga para todos los corpus activos
 - 🧰 **Línea de comandos** y uso como módulo de Python
 
@@ -18,8 +18,7 @@ Sistema de descarga y carga de corpus en español, con enfoque en Colombia y Am�
 open_corpus_co_es/
 ├── downloader.py         # Descarga y validación de archivos
 ├── loader.py             # Carga de corpus según su formato
-├── utils.py              # Ruta local para almacenamiento (~/.open_corpus_co_es/data)
-├── catalog.json          # Catálogo principal de corpus
+├── utils.py              # Ruta local para almacenamiento 
 ├── demo.py               # Script de prueba para un solo corpus
 ├── demo_all.py           # Script de prueba para todos los corpus
 ├── test_loader.py        # Test unitarios
@@ -33,7 +32,7 @@ open_corpus_co_es/
 ### Desde Pip
 
 ```bash
-pip install open_corpus_co_es.git
+pip install open_corpus_co_es
 ```
 
 ---
@@ -91,11 +90,17 @@ Puedes acceder directamente a los archivos procesados para análisis posterior.
 ## Ejemplo de Uso en Python
 
 ```python
-from open_corpus_co_es.loader import load_corpus
+from open_corpus_co_es.loader import load_corpus, list_corpus
+from open_corpus_co_es.downloader import download_corpus
 
-docs = load_corpus("educacion_colombia_2024_v2")
-for i, d in enumerate(docs[:3]):
-    print(d['text'][:200])
+print(f"Corpus disponibles: {list_corpus()}")
+nombre = "presindetes"
+
+print(f"\n📥 Descargando y cargando corpus: {nombre}")
+download_corpus(nombre, force=True)
+datos = load_corpus(nombre)
+print("\n✅ Corpus cargado correctamente\n")
+print(f"\n📄 Primer documento: {datos[:1]}")
 ```
 
 ---
@@ -103,10 +108,16 @@ for i, d in enumerate(docs[:3]):
 ## Prueba interactiva
 
 ```bash
-python demo.py --corpus educacion_colombia_2024_v2
+python demo.py --corpus presindetes
 ```
 
 ---
+
+## Autor y Créditos
+
+**Luis Gabriel Moreno Sandoval**  
+Pontificia Universidad Javeriana  
+morenoluis@javeriana.edu.co
 
 ## Licencia
 
