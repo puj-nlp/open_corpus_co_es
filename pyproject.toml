@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "open_corpus_co_es"
-version = "0.1.0"
+version = "0.1.1a1"
 description = "Corpus en español de Colombia para procesamiento de lenguaje natural"
 authors = [
     {name = "Luis Gabriel Moreno Sandoval", email = "morenoluis@javeriana.edu.co"}

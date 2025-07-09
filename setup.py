@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="open_corpus_co_es",
-    version="0.1.0",
+    version="0.1.1a1",
     description="Corpus en español de Colombia para PLN",
     author="Luis Gabriel Moreno Sandoval",
     author_email="morenoluis@javeriana.edu.co",
