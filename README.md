@@ -94,7 +94,7 @@ from open_corpus_co_es.loader import load_corpus, list_corpus
 from open_corpus_co_es.downloader import download_corpus
 
 print(f"Corpus disponibles: {list_corpus()}")
-nombre = "presindetes"
+nombre = "presidentes"
 
 print(f"\n📥 Descargando y cargando corpus: {nombre}")
 download_corpus(nombre, force=True)
