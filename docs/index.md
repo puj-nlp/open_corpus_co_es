@@ -43,7 +43,7 @@ df = load_corpus("nombre_del_corpus")
 open_corpus_co_es/
 ├── downloader.py         # Descarga archivos desde Google Drive o URL
 ├── loader.py             # Carga automática según tipo de archivo
-├── utils.py              # Ruta local (~/.open_corpus_co_es/data)
+├── utils.py              # Ruta 
 ├── catalog.json          # Metadatos de los corpus
 ├── demo.py               # Prueba de un corpus
 ├── test_loader.py        # Pruebas automatizadas
