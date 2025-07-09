@@ -1,9 +1,6 @@
 ---
-title: Librería y Créditos
----
----
 layout: home
-title: Open Corpus CO ES
+title: Open Corpus CO-ES
 description: Sistema de descarga y carga de corpus en español, con enfoque en Colombia y América Latina
 permalink: /
 nav_order: 1
