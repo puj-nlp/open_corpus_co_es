@@ -5,7 +5,7 @@ Sistema de descarga y carga de corpus en español, con enfoque en Colombia y Am�
 ## Características
 
 - 📥 **Descarga automatizada** desde Google Drive (mediante `gdown` o URL directa)
-- 🧾 **Catálogo ** con metadatos de más de 70 corpus y recursos léxicos
+- 🧾 **Catálogo** con metadatos de más de 70 corpus y recursos léxicos
 - 📚 **Carga flexible** de corpus en múltiples formatos
 - 🧪 **Pruebas automáticas** de carga para todos los corpus activos
 - 🧰 **Línea de comandos** y uso como módulo de Python
