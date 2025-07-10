@@ -48,15 +48,13 @@ Los siguientes corpus están disponibles a través de la librería:
 | `llm_humano`                          | 2023 | Colombia | LLM           | general    |
 | `es_hs_project_raw_extended`          | 2023 | Colombia | Odio          | general    |
 | `es_hs_project_raw_extended_v2`       | 2023 | Colombia | Odio          | general    |
-| `educacion_primaria`                  | 2024 | Colombia | Educacion     | general    |
-| `llm_humano`                          | 2023 | Colombia | llm           | general    |
 | `discurso_odio`                       | 2023 | Colombia | Discurso_odio | general    |
 | `ods`                                 | 2020 | Colombia | Ods           | general    |
 | `laudato_si`                          | 2020 | Colombia | Religion      | general    |
 | `news_2020_peru_v2`                   | 2020 | Peru     | News          | news       |
 | `news_2020_colombia_v2`               | 2020 | Colombia | News          | news       |
 | `news_2020_ecuador_v2`                | 2020 | Ecuador  | News          | news       |
-| `consolidated_anew...` | 2020 | Colombia | NCR           | lexicones  |
+| `consolidated_anew...`                | 2020 | Colombia | NCR           | lexicones  |
 | `lexicon_tic`                         | 2020 | Colombia | TIC           | lexicones  |
 | `lexicon_actors_roles`                | 2020 | Colombia | Roles         | lexicones  |
 | `lexicon_actors_roles_excel_v2`       | 2020 | Colombia | Roles         | lexicones  |
@@ -75,6 +73,7 @@ Los siguientes corpus están disponibles a través de la librería:
 | `lexicon_verbos_sentencias_tierras`   | 2020 | Colombia | Guerra        | lexicones  |
 | `lexicon_verbos_sentencias_tierras_v2`| 2020 | Colombia | Guerra        | lexicones  |
 | `tesauro_cev_v2`                      | 2020 | Colombia | CEV           | tesauro    |
+
 ## 📦 Cómo acceder
 
 ```bash
