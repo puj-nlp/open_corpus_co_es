@@ -1,10 +1,15 @@
 title: Open Corpus CO-ES
-description: Librería para la descarga y carga de corpus en español con enfoque en Colombia y América Latina.
+description: "Corpus y recursos para PLN. Versión 0.1.1a3: 66 entradas auditadas y 65 habilitadas."
 author: Luis Gabriel Moreno Sandoval
+url: "https://puj-nlp.github.io"
+baseurl: "/open_corpus_co_es"
+lang: es
 theme: minima
-minima:
-  navigation:
-    enabled: true
+header_pages:
+  - corpus.md
+  - auditoria.md
+  - versiones.md
+  - publicacion.md
 markdown: kramdown
 plugins:
   - jekyll-feed

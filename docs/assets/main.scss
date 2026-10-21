@@ -1,0 +1,21 @@
+---
+---
+
+@import "minima";
+
+table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+th,
+td {
+  vertical-align: top;
+}
+
+td code,
+p code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}

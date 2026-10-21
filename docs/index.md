@@ -1,79 +1,67 @@
 ---
 layout: home
 title: Open Corpus CO-ES
-description: Sistema de descarga y carga de corpus en español, con enfoque en Colombia y América Latina
+description: Descarga y carga de corpus y recursos tabulares para PLN
 permalink: /
 nav_order: 1
 ---
 
-## Créditos
+# Open Corpus CO-ES
 
-Proyecto desarrollado por **Luis Gabriel Moreno Sandoval** y colaboradores.
+Versión **[0.1.1a3 publicada en PyPI](https://pypi.org/project/open-corpus-co-es/0.1.1a3/)** el 21 de octubre de 2026.
 
-## ▶Instalación
+**66 entradas auditadas · 65 habilitadas · 17 pruebas aprobadas**
 
-### Desde Pip
+Descarga y carga corpus documentales, publicaciones, noticias, discursos, entrevistas, recursos léxicos e indicadores para procesamiento de lenguaje natural, con énfasis en Colombia y América Latina.
+
+## Instalar y actualizar
+
+Requiere **Python 3.9 o posterior**. Esta es una versión preliminar; puedes instalarla explícitamente:
 
 ```bash
-pip install open_corpus_co_es
+pip install --upgrade open_corpus_co_es==0.1.1a3
 ```
 
-
-## Librería
-
-La librería `open_corpus_co_es` permite acceder de forma sencilla a conjuntos de datos textuales en español con énfasis en contextos latinoamericanos.
-
-Puedes usarla desde la terminal:
+## Consultar y descargar corpus
 
 ```bash
 python -m open_corpus_co_es --list
-python -m open_corpus_co_es --download <nombre_del_corpus>
+python -m open_corpus_co_es --download presidentes
 ```
-
-O desde Python:
 
 ```python
-from open_corpus_co_es import load_corpus
-df = load_corpus("nombre_del_corpus")
+from open_corpus_co_es import download_corpus, load_corpus
+
+download_corpus("dragons_rag_2026_10_19")
+documentos = load_corpus("dragons_rag_2026_10_19")
+print(len(documentos))
 ```
 
-## 📁 Estructura del Código
+El inventario incluye publicaciones, noticias, discursos, entrevistas, recursos léxicos e indicadores. El corpus `presidentes` contiene 22 registros y está actualizado a 2026, con el registro de Abelardo de la Espriella para 2026–2030.
 
-```
-open_corpus_co_es/
-├── downloader.py         # Descarga archivos desde Google Drive o URL
-├── loader.py             # Carga automática según tipo de archivo
-├── utils.py              # Ruta 
-├── catalog.json          # Metadatos de los corpus
-├── demo.py               # Prueba de un corpus
-├── test_loader.py        # Pruebas automatizadas
-├── __main__.py           # CLI
-```
+## Novedades de esta versión
 
-## 🔧 Ejemplo de uso en Python
+- **Dragons RAG:** 169.248 documentos, 33 columnas y 154.477 textos únicos, procedentes de Bluesky, Media Cloud y GDELT; versión de origen 2026-10-19.
+- **Presidentes:** 22 registros, incluido Abelardo de la Espriella con periodo etiquetado 2026–2030. Consulta en la auditoría las limitaciones de las etiquetas históricas originales.
+- **Global Populism Database:** siete colecciones de discursos, rúbricas e indicadores, con ediciones de 2019, 2022 y 2025.
+- **Educación, salud y seguridad:** las 18 combinaciones de tres temas, tres países y dos versiones, con Argentina, Colombia y México.
+- **Inventario sin nombres ocultos:** las variantes Excel se identifican como `educacion_primaria_excel` y `llm_humano_excel`.
+- **Integridad y carga:** validación de tamaño y SHA-256, conservación de filas con texto vacío, lectura correcta del CSV CREA y opciones CLI `--force` y `--download_all`.
+
+## Documentación y verificación
+
+Consulta el [inventario completo]({{ '/corpus/' | relative_url }}), el [informe de auditoría]({{ '/auditoria/' | relative_url }}), las [notas de versión]({{ '/versiones/' | relative_url }}) y la [guía de publicación]({{ '/publicacion/' | relative_url }}). Las fichas detallan los campos originales, tamaños, huellas SHA-256 y limitaciones de cada colección.
+
+Se comprobaron las **65 descargas públicas** y la lectura completa de las **66 entradas**. El wheel y la distribución fuente publicados en PyPI coinciden con las huellas verificadas; también se probó la instalación desde PyPI. La auditoría técnica no implica que todas las etiquetas de origen estén históricamente normalizadas.
+
+Los archivos se descargan desde Google Drive a `~/.open_corpus_co_es/data/`. No se distribuyen dentro del wheel.
+
+Para actualizar una copia local antigua:
 
 ```python
-from open_corpus_co_es.loader import load_corpus, list_corpus
-from open_corpus_co_es.downloader import download_corpus
-
-print(f"Corpus disponibles: {list_corpus()}")
-nombre = "presidentes"
-
-print(f"\n📥 Descargando y cargando corpus: {nombre}")
-download_corpus(nombre, force=True)
-datos = load_corpus(nombre)
-print("\n✅ Corpus cargado correctamente\n")
-print(f"\n📄 Primer documento: {datos[:1]}")
+download_corpus("presidentes", force=True)
 ```
 
-## 👨‍💻 Autor y Créditos
+El [código de la distribución publicada](https://pypi.org/project/open-corpus-co-es/0.1.1a3/#files) y sus metadatos están disponibles en PyPI.
 
-**Luis Gabriel Moreno Sandoval**  
-Pontificia Universidad Javeriana  
-📧 morenoluis@javeriana.edu.co
-
-Con el apoyo del grupo de investigación en Procesamiento de Lenguaje Natural (PUJ-NLP).
-
-## 🧾 Licencia
-
-MIT License
+Proyecto desarrollado por Luis Gabriel Moreno Sandoval, Pontificia Universidad Javeriana.
