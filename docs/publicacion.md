@@ -7,7 +7,7 @@ nav_order: 5
 
 # Publicación de Open Corpus CO-ES
 
-La versión **[0.1.1a3](https://pypi.org/project/open-corpus-co-es/0.1.1a3/)** fue publicada
+La versión **[0.1.1a4](https://pypi.org/project/open-corpus-co-es/0.1.1a4/)** fue publicada
 y verificada el **21 de octubre de 2026**. Es una versión preliminar. La versión se define
 en `pyproject.toml`; `setup.py` utiliza esa configuración para evitar divergencias.
 El catálogo forma parte del wheel y la distribución fuente. Los corpus permanecen
@@ -16,7 +16,7 @@ en Drive. La distribución fuente también incluye documentación y scripts de a
 ## Antes de construir
 
 Para reproducir exactamente la versión publicada, utiliza su distribución fuente
-disponible en [PyPI](https://pypi.org/project/open-corpus-co-es/0.1.1a3/#files).
+disponible en [PyPI](https://pypi.org/project/open-corpus-co-es/0.1.1a4/#files).
 Los comandos de esta sección se ejecutan desde la carpeta de esa distribución.
 
 ```bash
@@ -42,7 +42,7 @@ del [informe de auditoría]({{ '/auditoria/' | relative_url }}).
 
 ```bash
 python -m build
-python -m twine check --strict dist/open_corpus_co_es-0.1.1a3-py3-none-any.whl dist/open_corpus_co_es-0.1.1a3.tar.gz
+python -m twine check --strict dist/open_corpus_co_es-0.1.1a4-py3-none-any.whl dist/open_corpus_co_es-0.1.1a4.tar.gz
 ```
 
 Comprueba que ambos artefactos contienen el catálogo de 66 entradas y que el wheel
@@ -58,7 +58,7 @@ publicados ni de la documentación del sitio.
 ## Subida a PyPI
 
 ```bash
-python -m twine upload --non-interactive dist/open_corpus_co_es-0.1.1a3-py3-none-any.whl dist/open_corpus_co_es-0.1.1a3.tar.gz
+python -m twine upload --non-interactive dist/open_corpus_co_es-0.1.1a4-py3-none-any.whl dist/open_corpus_co_es-0.1.1a4.tar.gz
 ```
 
 Se especifican los dos archivos exactos para no volver a subir versiones antiguas
@@ -76,7 +76,7 @@ Confirma la presencia de ambos artefactos en la
 con los archivos locales. En un entorno limpio:
 
 ```bash
-pip install open_corpus_co_es==0.1.1a3
+pip install open_corpus_co_es==0.1.1a4
 python -m open_corpus_co_es --list
 python -m open_corpus_co_es --download presidentes
 ```
@@ -85,5 +85,6 @@ Desde Python comprueba que `list_corpus()` devuelve 65 entradas, que `load_corpu
 devuelve 22 registros y que existe el registro de Abelardo de la Espriella con `fecha_inicio=2026`.
 El estado de la publicación se verifica contra PyPI; construir el paquete localmente no lo publica.
 
-La comprobación posterior de `0.1.1a3` ya se completó. Los resultados y las huellas
-están en las [notas de versión]({{ '/versiones/' | relative_url }}).
+La comprobación posterior de `0.1.1a4` confirmó los dos artefactos en PyPI y una
+instalación limpia con el catálogo actualizado. Los resultados y las huellas están
+en las [notas de versión]({{ '/versiones/' | relative_url }}).

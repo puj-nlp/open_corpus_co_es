@@ -8,7 +8,7 @@ nav_order: 2
 
 # Inventario completo
 
-Actualización: **2026-10-21**. Versión **[0.1.1a3 publicada en PyPI](https://pypi.org/project/open-corpus-co-es/0.1.1a3/)**. **66 entradas: 65 habilitadas y una deshabilitada**.
+Actualización: **2026-10-21**. Versión **[0.1.1a4 publicada en PyPI](https://pypi.org/project/open-corpus-co-es/0.1.1a4/)**. **66 entradas: 65 habilitadas y una deshabilitada**.
 
 El nombre de la primera columna es el identificador para `download_corpus()` y `load_corpus()`. Los archivos tabulares se cargan como listas de diccionarios; la columna textual configurada se expone como `text`. Si no hay columna textual, se representan los campos de la fila como texto. Las etiquetas de país y año son metadatos heredados de la colección, salvo las actualizaciones documentadas; no son una validación geográfica o temporal de cada documento.
 
@@ -18,7 +18,7 @@ Los tamaños, huellas, esquemas y cantidades de filas corresponden a archivos in
 
 | Nombre | Estado | Formato | Filas | Columnas | País declarado | Año/edición | Tema |
 |---|---|---|---:|---:|---|---:|---|
-| `dragons_rag_2026_10_19` | Habilitado | parquet | 169248 | 33 | Multipaís | 2026 | Noticias y redes sociales para RAG |
+| `dragons_rag` | Habilitado | parquet | 169248 | 33 | Multipaís | 2026 | Noticias y redes sociales para RAG |
 | `dataset_bancos_2022` | Habilitado | parquet | 38952 | 3 | Colombia | 2022 | Financiero |
 | `perfiles_periodistas_2020` | Habilitado | parquet | 14030 | 8 | Colombia | 2020 | Perfiles |
 | `tweets_miscelaneos_2020` | Habilitado | parquet | 95678 | 6 | Colombia | 2020 | Tweets |
@@ -126,15 +126,15 @@ Versión de origen **2026-10-19**, generada el 21 de octubre de 2026: **169.248 
 
 Los registros con texto vacío se conservan con sus metadatos. Los conteos de filas sin texto, los problemas de origen y la política de lectura de términos literales como `nan` y `null` se detallan en la [auditoría]({{ '/auditoria/' | relative_url }}). Una fila no equivale necesariamente a un texto no vacío o único.
 
-### `dragons_rag_2026_10_19`
+### `dragons_rag`
 
 Dragons - Corpus documental para RAG de Bluesky, Media Cloud y GDELT, versión del 2026-10-19. Conserva el texto original y sus metadatos, sin fragmentación ni embeddings.
 
-- Estado: **habilitado**. Tipo: `corpora`. Familia: `dragons`.
+- Estado: **habilitado**. Tipo: `corpora`. Familia: `dragons_rag`.
 - Formato: `parquet`. Filas: **169248**. Columnas: **33**. Tamaño: **256941261 bytes**.
 - País declarado: Multipaís. Año/edición declarada: 2026.
 - Texto: columna `text`.
-- Archivo: [dragons_rag_2026_10_19.parquet](https://drive.google.com/file/d/1JN8PhSXiUoeE45bBDOpfNyvNicLO2GQn/view?usp=drivesdk). Ruta de Drive: `corpora/dragons/dragons_rag_2026_10_19.parquet`.
+- Archivo: [dragons_rag.parquet](https://drive.google.com/file/d/1JN8PhSXiUoeE45bBDOpfNyvNicLO2GQn/view?usp=drivesdk). Ruta de Drive: `corpora/dragons_rag/dragons_rag.parquet`.
 - SHA-256: `f4a669f17eaedd357f72b70c2192e685b6d534a94f6ffaeadbced7290b181728`.
 
 Campos originales: `document_id`, `text`, `collection_name`, `title`, `url`, `source`, `source_type`, `language`, `country_key`, `created_at`, `synced_at`, `mongo_id`, `strategy`, `url_domain`, `final_url`, `language_base`, `publisher`, `author_id`, `author_name`, `author_handle`, `uri`, `section`, `event_id`, `event_context`, `keyword_family`, `collection_keyword`, `collection_keyword_label`, `collection_query`, `keyword_matches`, `top_terms`, `word_count`, `char_count`, `text_sha256`.

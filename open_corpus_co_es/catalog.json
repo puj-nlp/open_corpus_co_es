@@ -2,7 +2,7 @@
   {
     "tipo": "corpora",
     "origen": "dragons",
-    "archivo": "dragons_rag_2026_10_19.parquet",
+    "archivo": "dragons_rag.parquet",
     "extension": "parquet",
     "pais": "Multipaís",
     "año": 2026,
@@ -62,7 +62,7 @@
       "text_sha256"
     ],
     "fecha_verificacion": "2026-10-21",
-    "ruta_drive": "corpora/dragons/dragons_rag_2026_10_19.parquet",
+    "ruta_drive": "corpora/dragons_rag/dragons_rag.parquet",
     "columna_texto": "text",
     "filas_sin_texto": 0
   },

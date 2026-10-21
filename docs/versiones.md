@@ -8,6 +8,24 @@ nav_order: 4
 
 # Versiones publicadas
 
+## 0.1.1a4 — 21 de octubre de 2026
+
+**Estado: publicada y verificada en [PyPI](https://pypi.org/project/open-corpus-co-es/0.1.1a4/).**
+
+```bash
+pip install --upgrade open_corpus_co_es==0.1.1a4
+```
+
+- Identificador simplificado a `dragons_rag`; el archivo en Drive es `dragons_rag.parquet` dentro de `corpora/dragons_rag/`.
+- El inventario, la documentación web, las pruebas y el catálogo usan el nombre nuevo. Los enlaces conservan los identificadores de Drive y la misma huella SHA-256.
+- El ejemplo Python de la página principal usa `presidentes` como corpus inicial.
+- Las 17 pruebas pasaron; `twine check --strict` aprobó los dos artefactos y se verificó la instalación directa desde PyPI.
+
+| Artefacto publicado | SHA-256 |
+|---|---|
+| `open_corpus_co_es-0.1.1a4-py3-none-any.whl` | `d138581334bfe33bc84f9e2075ea08ea2706f4ec0bd547448d822b69986ddd95` |
+| `open_corpus_co_es-0.1.1a4.tar.gz` | `678be2f41ba5bcbb0bf9380177d6be0f87a9fc18385dc81915776c1cebfd2971` |
+
 ## 0.1.1a3 — 21 de octubre de 2026
 
 **Estado: publicada y verificada en [PyPI](https://pypi.org/project/open-corpus-co-es/0.1.1a3/).**
@@ -21,6 +39,7 @@ pip install --upgrade open_corpus_co_es==0.1.1a3
 
 - 66 entradas identificables, 65 habilitadas y una deshabilitada conservada.
 - Nuevo `dragons_rag_2026_10_19`: 169.248 documentos, 154.477 textos únicos y 33 columnas.
+- En 0.1.1a4, el identificador se simplificó a `dragons_rag`; usa el nombre nuevo al actualizar.
 - `presidentes`: actualización de 2026 con 22 registros, incluido Abelardo de la Espriella para el periodo etiquetado 2026–2030.
 - Siete colecciones del Global Populism Database que ya estaban en Drive y no figuraban en el inventario.
 - Variantes Excel accesibles como `educacion_primaria_excel` y `llm_humano_excel`, sin ocultar los Parquet.
@@ -68,4 +87,4 @@ y el [inventario]({{ '/corpus/' | relative_url }}) antes de usar los datos.
 ## 0.1.1a2
 
 Versión anterior disponible en [PyPI](https://pypi.org/project/open-corpus-co-es/0.1.1a2/).
-Para obtener el inventario auditado y las correcciones documentadas, actualiza a `0.1.1a3`.
+Para obtener el inventario auditado y el nombre simplificado del corpus Dragons, actualiza a `0.1.1a4`.
