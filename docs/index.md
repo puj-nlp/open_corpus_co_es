@@ -8,7 +8,7 @@ nav_order: 1
 
 # Open Corpus CO-ES
 
-Versión **[0.1.1a3 publicada en PyPI](https://pypi.org/project/open-corpus-co-es/0.1.1a3/)** el 21 de octubre de 2026.
+Versión **[0.1.1a4 publicada en PyPI](https://pypi.org/project/open-corpus-co-es/0.1.1a4/)** el 21 de octubre de 2026.
 
 **66 entradas auditadas · 65 habilitadas · 17 pruebas aprobadas**
 
@@ -19,7 +19,7 @@ Descarga y carga corpus documentales, publicaciones, noticias, discursos, entrev
 Requiere **Python 3.9 o posterior**. Esta es una versión preliminar; puedes instalarla explícitamente:
 
 ```bash
-pip install --upgrade open_corpus_co_es==0.1.1a3
+pip install --upgrade open_corpus_co_es==0.1.1a4
 ```
 
 ## Consultar y descargar corpus
@@ -32,8 +32,9 @@ python -m open_corpus_co_es --download presidentes
 ```python
 from open_corpus_co_es import download_corpus, load_corpus
 
-download_corpus("dragons_rag_2026_10_19")
-documentos = load_corpus("dragons_rag_2026_10_19")
+nombre = "presidentes"
+download_corpus(nombre)
+documentos = load_corpus(nombre)
 print(len(documentos))
 ```
 
@@ -41,6 +42,8 @@ El inventario incluye publicaciones, noticias, discursos, entrevistas, recursos 
 
 ## Novedades de esta versión
 
+- **Nombre simple:** el corpus RAG se descarga como `dragons_rag`; su archivo es `dragons_rag.parquet`.
+- **Ejemplo inicial:** la página usa `presidentes` para mostrar la descarga y carga de un corpus.
 - **Dragons RAG:** 169.248 documentos, 33 columnas y 154.477 textos únicos, procedentes de Bluesky, Media Cloud y GDELT; versión de origen 2026-10-19.
 - **Presidentes:** 22 registros, incluido Abelardo de la Espriella con periodo etiquetado 2026–2030. Consulta en la auditoría las limitaciones de las etiquetas históricas originales.
 - **Global Populism Database:** siete colecciones de discursos, rúbricas e indicadores, con ediciones de 2019, 2022 y 2025.
@@ -62,6 +65,6 @@ Para actualizar una copia local antigua:
 download_corpus("presidentes", force=True)
 ```
 
-El [código de la distribución publicada](https://pypi.org/project/open-corpus-co-es/0.1.1a3/#files) y sus metadatos están disponibles en PyPI.
+El [código de la distribución publicada](https://pypi.org/project/open-corpus-co-es/0.1.1a4/#files) y sus metadatos están disponibles en PyPI.
 
 Proyecto desarrollado por Luis Gabriel Moreno Sandoval, Pontificia Universidad Javeriana.

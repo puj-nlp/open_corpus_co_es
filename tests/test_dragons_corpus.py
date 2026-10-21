@@ -13,7 +13,7 @@ from open_corpus_co_es.loader import list_corpus, load_corpus
 
 
 class TestDragonsCorpus(unittest.TestCase):
-    corpus_name = "dragons_rag_2026_10_19"
+    corpus_name = "dragons_rag"
 
     def test_catalog_metadata(self):
         metadata = list_corpus()[self.corpus_name]

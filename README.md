@@ -2,14 +2,14 @@
 
 Biblioteca de descarga y carga de corpus y recursos tabulares para procesamiento de lenguaje natural, con énfasis en Colombia y América Latina.
 
-Versión publicada: **0.1.1a3**. Inventario auditado el **21 de octubre de 2026**: **66 entradas**, **65 habilitadas** y una deshabilitada. Incluye corpus documentales, publicaciones, noticias, discursos, recursos léxicos e indicadores internacionales. Los archivos de datos se descargan desde Google Drive y no se incluyen dentro del paquete.
+Versión publicada: **0.1.1a4**. Inventario auditado el **21 de octubre de 2026**: **66 entradas**, **65 habilitadas** y una deshabilitada. Incluye corpus documentales, publicaciones, noticias, discursos, recursos léxicos e indicadores internacionales. Los archivos de datos se descargan desde Google Drive y no se incluyen dentro del paquete.
 
 ## Instalación
 
 Requiere Python 3.9 o posterior. Para incluir versiones preliminares:
 
 ```bash
-pip install --upgrade open_corpus_co_es==0.1.1a3
+pip install --upgrade open_corpus_co_es==0.1.1a4
 ```
 
 Para instalar esta revisión desde el repositorio:
@@ -45,7 +45,7 @@ Los registros con texto vacío se conservan como `text=""` con sus metadatos. Lo
 python -m open_corpus_co_es --list
 python -m open_corpus_co_es --download presidentes
 python -m open_corpus_co_es --download presidentes --force
-python -m open_corpus_co_es --download dragons_rag_2026_10_19
+python -m open_corpus_co_es --download dragons_rag
 python -m open_corpus_co_es --download_all
 ```
 
@@ -74,7 +74,7 @@ La [auditoría](docs/auditoria.md) distingue integridad técnica, completitud de
 ```bash
 python -m pytest tests
 python -m build
-python -m twine check dist/open_corpus_co_es-0.1.1a3*
+python -m twine check dist/open_corpus_co_es-0.1.1a4*
 ```
 
 Consulta la [guía de publicación](docs/publicacion.md) para subir únicamente los artefactos de la versión verificada.

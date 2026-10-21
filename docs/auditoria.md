@@ -5,7 +5,7 @@ permalink: /auditoria/
 nav_order: 3
 ---
 
-# Auditoría de la versión 0.1.1a3
+# Auditoría de la versión 0.1.1a4
 
 Fecha: **21 de octubre de 2026**. Consulta también el
 [inventario completo]({{ '/corpus/' | relative_url }}) y la [evidencia estructurada]({{ '/auditoria_corpus.json' | relative_url }}).
@@ -135,7 +135,7 @@ La licencia MIT cubre el código del paquete.
 
 ## Publicación verificada
 
-La versión **[0.1.1a3](https://pypi.org/project/open-corpus-co-es/0.1.1a3/)** se publicó
+La versión **[0.1.1a4](https://pypi.org/project/open-corpus-co-es/0.1.1a4/)** se publicó
 en PyPI el **21 de octubre de 2026**. Se comprobaron los dos artefactos publicados
 contra sus huellas locales y se instaló el wheel directamente desde PyPI en una
 carpeta aislada. La instalación devolvió 65 entradas habilitadas y cargó los

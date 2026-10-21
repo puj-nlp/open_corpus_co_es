@@ -1,12 +1,12 @@
 {
-  "version": "0.1.1a3",
+  "version": "0.1.1a4",
   "fecha": "2026-10-21",
   "entradas": 66,
   "habilitadas": 65,
   "resultados": [
     {
-      "nombre": "dragons_rag_2026_10_19",
-      "archivo": "dragons_rag_2026_10_19.parquet",
+      "nombre": "dragons_rag",
+      "archivo": "dragons_rag.parquet",
       "enabled": true,
       "filas": 169248,
       "bytes": 256941261,
