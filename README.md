@@ -1,124 +1,86 @@
 # Open Corpus CO-ES
 
-Sistema de descarga y carga de corpus en español, con enfoque en Colombia y América Latina, para tareas de procesamiento de lenguaje natural (PLN).
+Biblioteca de descarga y carga de corpus y recursos tabulares para procesamiento de lenguaje natural, con énfasis en Colombia y América Latina.
 
-## Características
+Versión publicada: **0.1.1a3**. Inventario auditado el **21 de octubre de 2026**: **66 entradas**, **65 habilitadas** y una deshabilitada. Incluye corpus documentales, publicaciones, noticias, discursos, recursos léxicos e indicadores internacionales. Los archivos de datos se descargan desde Google Drive y no se incluyen dentro del paquete.
 
-- 📥 **Descarga automatizada** desde Google Drive (mediante `gdown` o URL directa)
-- 🧾 **Catálogo** con metadatos de más de 70 corpus y recursos léxicos
-- 📚 **Carga flexible** de corpus en múltiples formatos
-- 🧪 **Pruebas automáticas** de carga para todos los corpus activos
-- 🧰 **Línea de comandos** y uso como módulo de Python
+## Instalación
 
----
-
-## Estructura del Proyecto
-
-```
-open_corpus_co_es/
-├── downloader.py         # Descarga y validación de archivos
-├── loader.py             # Carga de corpus según su formato
-├── utils.py              # Ruta local para almacenamiento 
-├── demo.py               # Script de prueba para un solo corpus
-├── demo_all.py           # Script de prueba para todos los corpus
-├── test_loader.py        # Test unitarios
-├── __main__.py           # Entrada desde CLI
-```
-
----
-
-## ▶Instalación
-
-### Desde Pip
+Requiere Python 3.9 o posterior. Para incluir versiones preliminares:
 
 ```bash
-pip install open_corpus_co_es
+pip install --upgrade open_corpus_co_es==0.1.1a3
 ```
 
----
+Para instalar esta revisión desde el repositorio:
 
-## Uso Básico
+```bash
+pip install -e .
+```
 
-### Listar corpus disponibles
+## Uso desde Python
+
+```python
+from open_corpus_co_es import download_corpus, list_corpus, load_corpus
+
+inventario = list_corpus()
+nombre = "presidentes"
+download_corpus(nombre)
+documentos = load_corpus(nombre)
+print(len(documentos))
+print(documentos[0]["text"][:200])
+
+download_corpus(nombre, force=True)
+```
+
+`list_corpus()` devuelve un diccionario de entradas habilitadas con descripción, formato, filas, columnas, campos, tamaño y SHA-256. `download_corpus()` comprueba tamaño y SHA-256 antes de reemplazar un archivo. Una descarga fallida con `force=True` conserva el archivo anterior. Si cambia el archivo remoto, se necesita una nueva verificación del catálogo.
+
+Los corpus tabulares del inventario se cargan como listas de diccionarios. Cuando hay una columna textual configurada, se expone como `text`; los demás campos disponibles se conservan. Los registros de `Raw_data` conservan su estructura original. Si el recurso contiene indicadores sin texto, `text` es una representación de sus campos, no un discurso ni un documento original. Las celdas nulas se omiten. No se eliminan duplicados.
+
+Los registros con texto vacío se conservan como `text=""` con sus metadatos. Los archivos se guardan en `~/.open_corpus_co_es/data/<nombre>/`. La carga completa puede necesitar memoria considerable, especialmente para los corpus de 915.939 filas. Si una copia local antigua no coincide con el catálogo actualizado, usa `download_corpus(nombre, force=True)`.
+
+## Línea de comandos
 
 ```bash
 python -m open_corpus_co_es --list
-```
-
-### Descargar un corpus
-
-```bash
-python -m open_corpus_co_es --download salud_colombia_2024_v2
-```
-
-### Descargar forzando reescritura
-
-```bash
-python -m open_corpus_co_es --download salud_colombia_2024_v2 --force
-```
-
-### Descargar todos los corpus habilitados
-
-```bash
+python -m open_corpus_co_es --download presidentes
+python -m open_corpus_co_es --download presidentes --force
+python -m open_corpus_co_es --download dragons_rag_2026_10_19
 python -m open_corpus_co_es --download_all
 ```
 
-### Ejecutar pruebas automáticas
+`--download_all` omite entradas deshabilitadas y devuelve un código de error si alguna descarga falla.
+
+## Inventario y cobertura
+
+La [referencia completa de los 66 recursos](docs/corpus.md) incluye el estado de cada entrada, filas, columnas, formato, país y año declarados, campos, ubicación y huella de integridad.
+
+- Educación, salud y seguridad: Argentina, Colombia y México; versiones v1 y v2.
+- Noticias: Colombia, Ecuador y Perú.
+- CEV: entrevistas y documentos procesados para RAG.
+- Recursos generales: presidentes, edades, música, educación primaria, textos humanos/LLM, discurso de odio, ODS y Laudato si.
+- Dragons RAG: 169.248 documentos de Bluesky, Media Cloud y GDELT.
+- Global Populism Database: siete colecciones de discursos, rúbricas e indicadores.
+- Recursos léxicos y tesauro CEV.
+
+`presidentes` está actualizado a 2026 y contiene **22 registros**, incluido Abelardo de la Espriella, etiquetado 2026–2030. El final del periodo no es la fecha de actualización. Hay una etiqueta histórica inconsistente para Jorge Eliécer Gaitán en el archivo original; consulta las limitaciones en el inventario.
+
+Las versiones Excel de educación primaria y textos humanos/LLM se llaman `educacion_primaria_excel` y `llm_humano_excel`; los nombres sin sufijo siguen cargando Parquet. Algunos nombres diferentes apuntan a contenido idéntico, documentado en la auditoría.
+
+La [auditoría](docs/auditoria.md) distingue integridad técnica, completitud del inventario y limitaciones de procedencia. El país y año heredados son etiquetas de la colección; no acreditan por sí solos la fecha o el lugar de cada documento. La licencia MIT del código no sustituye las condiciones de uso de las fuentes de datos.
+
+## Desarrollo y publicación
 
 ```bash
-python -m open_corpus_co_es.test_loader
+python -m pytest tests
+python -m build
+python -m twine check dist/open_corpus_co_es-0.1.1a3*
 ```
 
-## Funciones Clave
+Consulta la [guía de publicación](docs/publicacion.md) para subir únicamente los artefactos de la versión verificada.
 
-### `download_corpus(name: str, force=False)`
-Descarga un corpus especificado por `name` usando su ID de Google Drive o URL. Verifica estructura básica y formatos.
+## Autor y licencia
 
-### `load_corpus(name: str)`
-Carga un corpus previamente descargado. Aplica extracción automática de texto desde diferentes formatos.
+Luis Gabriel Moreno Sandoval — Pontificia Universidad Javeriana — morenoluis@javeriana.edu.co.
 
-### `list_corpus()`
-Retorna metadatos del catálogo activo en forma de diccionario.
-
----
-
-
-Puedes acceder directamente a los archivos procesados para análisis posterior.
-
----
-
-## Ejemplo de Uso en Python
-
-```python
-from open_corpus_co_es.loader import load_corpus, list_corpus
-from open_corpus_co_es.downloader import download_corpus
-
-print(f"Corpus disponibles: {list_corpus()}")
-nombre = "presidentes"
-
-print(f"\n📥 Descargando y cargando corpus: {nombre}")
-download_corpus(nombre, force=True)
-datos = load_corpus(nombre)
-print("\n✅ Corpus cargado correctamente\n")
-print(f"\n📄 Primer documento: {datos[:1]}")
-```
-
----
-
-## Prueba interactiva
-
-```bash
-python demo.py --corpus presindetes
-```
-
----
-
-## Autor y Créditos
-
-**Luis Gabriel Moreno Sandoval**  
-Pontificia Universidad Javeriana  
-morenoluis@javeriana.edu.co
-
-## Licencia
-
-MIT License
+Código bajo licencia MIT. Consulta `LICENSE`.
