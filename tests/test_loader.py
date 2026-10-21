@@ -1,5 +1,7 @@
 # test_loader.py
 import unittest
+import tempfile
+from unittest.mock import patch
 from open_corpus_co_es.loader import load_corpus, list_corpus
 from open_corpus_co_es.downloader import download_corpus
 
@@ -18,14 +20,15 @@ class TestCorpusLoader(unittest.TestCase):
     def test_download_and_load_by_extension(self):
         # Uno por tipo de archivo
         selected = [
-            "presidentes",                        # zip -> txt
-            "dataset_bancos_2022",               # parquet con Raw_data no válido
-            "lexicon_sevicia",       # csv
-            "lexicon_afectivo_categorias_v2",    # xlsx
+            "presidentes",
+            "dataset_bancos_2022",
+            "lexicon_sevicia",
+            "lexicon_afectivo_categorias_v2",
             "news_2020_peru_v2"
         ]
         for name in selected:
-            with self.subTest(name=name):
+            with self.subTest(name=name), tempfile.TemporaryDirectory() as directory, \
+                    patch("open_corpus_co_es.downloader.ensure_data_dir", return_value=directory):
                 download_corpus(name)
                 try:
                     corpus = load_corpus(name)
