@@ -6,12 +6,6 @@ from pathlib import Path
 from .downloader import get_corpus_path, load_catalog
 import csv
 
-try:
-    nltk.data.find("tokenizers/punkt")
-except LookupError:
-    nltk.download("punkt")
-    nltk.download('punkt_tab')
-
 CATALOG, CATALOG_ENABLED = load_catalog()
 
 
@@ -34,21 +28,27 @@ def list_corpus():
     }
 
 
-def extract_documents_from_dataframe(df):
-    possible_names = ["text", "contenido", "tweet", "mensaje", "comentario", "descripcion", "texto"]
-    text_col = next((col for col in df.columns if any(k in col.lower() for k in possible_names)), None)
+def extract_documents_from_dataframe(df, text_column=None):
+    possible_names = ["text", "texto", "contenido", "tweet", "mensaje", "comentario", "descripcion",
+                      "description", "hit sentence", "hit text", "content", "lyrics", "res", "word", "palabra"]
+    columns = {str(column).lower(): column for column in df.columns}
+    text_col = text_column or next((columns[name] for name in possible_names if name in columns), None)
+    if text_col is not None and text_col not in df.columns:
+        raise ValueError(f"No se encontró la columna de texto: {text_col}")
 
     docs = []
 
-    for _, row in df.iterrows():
-        row_dict = row.dropna().to_dict()
-        if text_col and text_col in row_dict:
-            text = str(row_dict.pop(text_col))
+    for record in df.to_dict(orient="records"):
+        row_dict = {
+            key: value for key, value in record.items()
+            if not (pd.api.types.is_scalar(value) and pd.isna(value))
+        }
+        if text_col:
+            text = str(row_dict.pop(text_col, ""))
         else:
             # Concatenar todas las columnas como texto si no hay columna clara
             text = " | ".join(str(v) for v in row_dict.values())
-        if text.strip():
-            docs.append({"text": text, **row_dict})
+        docs.append({"text": text, **row_dict})
 
     return docs
 
@@ -71,7 +71,8 @@ def extract_documents_from_dataframe_old(df):
         return df.to_dict(orient="records")
 
 
-def extract_text_from_file(path):
+def extract_text_from_file(path, metadata=None):
+    metadata = metadata or {}
     ext = os.path.splitext(path)[-1].lower()
     df = None
     if ext == ".txt":
@@ -88,41 +89,41 @@ def extract_text_from_file(path):
     elif ext == ".csv":
         try:
             sep = detectar_separador(path)
-            df = pd.read_csv(path, sep=sep, encoding="utf-8")
+            df = pd.read_csv(path, sep=sep, encoding="utf-8", **metadata.get("opciones_lectura", {}))
         except UnicodeDecodeError:
             sep = detectar_separador(path, encoding="latin1")
-            df = pd.read_csv(path, sep=sep, encoding="latin1")
+            df = pd.read_csv(path, sep=sep, encoding="latin1", **metadata.get("opciones_lectura", {}))
     elif ext == ".xlsx":
         df = pd.read_excel(path)
     elif ext == ".parquet":
         df = pd.read_parquet(path)
     elif ext in [".jsonl", ".json"]:
         with open(path, encoding="utf-8") as f:
-            lines = f.readlines()
-        try:
-            return [json.loads(line) for line in lines if line.strip()]
-        except json.JSONDecodeError as e:
-            print(f"[ERROR] No se pudo decodificar JSON: {e}")
-            return []
+            if ext == ".json":
+                payload = json.load(f)
+                return payload if isinstance(payload, list) else [payload]
+            return [json.loads(line) for line in f if line.strip()]
     else:
         return ""
 
     if "Raw_data" in df.columns:
         json_objects = []
-        for idx, raw in df["Raw_data"].dropna().astype(str).items():
+        for idx, raw in df["Raw_data"].dropna().items():
+            if isinstance(raw, dict):
+                json_objects.append(raw)
+                continue
             try:
                 obj = json.loads(raw)
             except json.JSONDecodeError:
                 try:
                     obj = ast.literal_eval(raw)
                 except Exception as e:
-                    print(f"[ERROR] Fila {idx} en Raw_data no se pudo parsear como JSON: {e}")
-                    continue
+                    raise ValueError(f"Raw_data inválido en la fila {idx} de {path}") from e
             if isinstance(obj, dict):
                 json_objects.append(obj)
         return json_objects
 
-    return extract_documents_from_dataframe(df)
+    return extract_documents_from_dataframe(df, metadata.get("columna_texto"))
 
 
 def load_corpus(name):
@@ -137,7 +138,9 @@ def load_corpus(name):
             f"Corpus '{name}' no descargado. Usa download_corpus('{name}') primero."
         )
 
-    files = [f for f in base_path.rglob("*") if f.is_file()]
+    extensions = {".txt", ".csv", ".xlsx", ".parquet", ".json", ".jsonl"}
+    files = sorted(f for f in base_path.rglob("*") if f.is_file() and f.suffix.lower() in extensions
+                   and not f.name.endswith(".manifest.json"))
     if not files:
         raise FileNotFoundError(f"No se encontraron archivos en el corpus '{name}'.")
 
@@ -151,20 +154,22 @@ def load_corpus(name):
     if txt_files:
         documentos = {}
         for file in files:
-            content = extract_text_from_file(str(file))
+            if file.suffix != ".txt":
+                continue
+            content = extract_text_from_file(str(file), meta)
             rel_parts = list(file.relative_to(base_path).parts)
             # clave = carpeta1_carpeta2_nombrearchivo
             if len(rel_parts) > 1:
                 key = "_".join(rel_parts[:-1] + [file.stem])
             else:
                 key = file.stem
-            tokenizer = meta.get("tokenizacion", "Word").lower()
+            tokenizer = (meta.get("tokenizacion") or "Word").lower()
             tokens = word_tokenize(content) if tokenizer == "word" else sent_tokenize(content)
             documentos[key] = Text(tokens)
         return documentos
 
     for file in files:
-        content = extract_text_from_file(str(file))
+        content = extract_text_from_file(str(file), meta)
         if isinstance(content, list):
             all_text.extend(content)
             is_json_mode = True
@@ -174,7 +179,7 @@ def load_corpus(name):
     if is_json_mode:
         return all_text
 
-    tokenizer = meta.get("tokenizacion", "Word").lower()
+    tokenizer = (meta.get("tokenizacion") or "Word").lower()
     joined_text = "\n".join(map(str, all_text))
     tokens = word_tokenize(joined_text) if tokenizer == "word" else sent_tokenize(joined_text)
     return Text(tokens)
